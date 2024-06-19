@@ -20,3 +20,7 @@ test('Refuse undefined', () => {
 test('Refuse null', () => {
 	expect(add(null + 4)).toBe('Only numbers accepted!');
 });
+
+test('Refuse string containing number', () => {
+	expect(add(8, '8')).toBe('Only numbers accepted!');
+});
