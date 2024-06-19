@@ -24,3 +24,29 @@ test('Refuse null', () => {
 test('Refuse string containing number', () => {
 	expect(add(8, '8')).toBe('Only numbers accepted!');
 });
+
+// Substraction
+
+test('Substraction of two numbers', () => {
+	expect(substract(7, 5)).toBe(2);
+});
+
+test('Substract two negative numbers', () => {
+	expect(substract(-12, -7)).toBe(-5);
+});
+
+test('Refuse anything that is not a number', () => {
+	expect(substract(9, 'a')).toBe('Only numbers accepted!');
+});
+
+test('Refuse undefined', () => {
+	expect(substract(undefined + 4)).toBe('Only numbers accepted!');
+});
+
+test('Refuse null', () => {
+	expect(substract(null + 4)).toBe('Only numbers accepted!');
+});
+
+test('Refuse string containing number', () => {
+	expect(substract(8, '8')).toBe('Only numbers accepted!');
+});
