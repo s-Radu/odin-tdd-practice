@@ -76,3 +76,29 @@ test('Refuse null', () => {
 test('Refuse string containing number', () => {
 	expect(multiply(8, '8')).toBe('Only numbers accepted!');
 });
+
+// Division
+
+test('Division of two numbers', () => {
+	expect(divide(72, 2)).toBe(36);
+});
+
+test('Division with negative number', () => {
+	expect(divide(-88, -4)).toBe(22);
+});
+
+test('Refuse anything that is not a number', () => {
+	expect(divide(9, 'a')).toBe('Only numbers accepted!');
+});
+
+test('Refuse undefined', () => {
+	expect(divide(undefined + 4)).toBe('Only numbers accepted!');
+});
+
+test('Refuse null', () => {
+	expect(divide(null + 4)).toBe('Only numbers accepted!');
+});
+
+test('Refuse string containing number', () => {
+	expect(divide(8, '8')).toBe('Only numbers accepted!');
+});
