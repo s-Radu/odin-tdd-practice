@@ -50,3 +50,29 @@ test('Refuse null', () => {
 test('Refuse string containing number', () => {
 	expect(substract(8, '8')).toBe('Only numbers accepted!');
 });
+
+// Multiplication
+
+test('Multiplication of two numbers', () => {
+	expect(multiply(6, 3)).toBe(18);
+});
+
+test('Multiplication with negative number', () => {
+	expect(multiply(7, -5)).toBe(-35);
+});
+
+test('Refuse anything that is not a number', () => {
+	expect(multiply(9, 'a')).toBe('Only numbers accepted!');
+});
+
+test('Refuse undefined', () => {
+	expect(multiply(undefined + 4)).toBe('Only numbers accepted!');
+});
+
+test('Refuse null', () => {
+	expect(multiply(null + 4)).toBe('Only numbers accepted!');
+});
+
+test('Refuse string containing number', () => {
+	expect(multiply(8, '8')).toBe('Only numbers accepted!');
+});
