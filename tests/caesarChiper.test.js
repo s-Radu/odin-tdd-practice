@@ -25,6 +25,10 @@ describe('caesarCipher function', () => {
 		test('case sensitivity is preserved', () => {
 			expect(caesarCipher('AbC', 2)).toBe('CdE');
 		});
+
+		test('Multiple words', () => {
+			expect(caesarCipher('Hello WorLd!', 7)).toBe('Olssv DvySk!');
+		});
 	});
 
 	describe('caesarCipher decryption', () => {
