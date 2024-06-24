@@ -1,45 +1,42 @@
 function add(a, b) {
-	if (
-		isNaN(a) ||
-		isNaN(b) ||
-		a == null ||
-		b == null ||
-		typeof a === 'string' ||
-		typeof b === 'string'
-	)
-		return 'Only numbers accepted!';
-
-	return a + b;
+	const result = validateInput(a, b);
+	if (typeof result === 'string') {
+		return result;
+	} else {
+		return result.a + result.b;
+	}
 }
 
 function substract(a, b) {
-	if (
-		isNaN(a) ||
-		isNaN(b) ||
-		a == null ||
-		b == null ||
-		typeof a === 'string' ||
-		typeof b === 'string'
-	)
-		return 'Only numbers accepted!';
-
-	return a - b;
+	const result = validateInput(a, b);
+	if (typeof result === 'string') {
+		return result;
+	} else {
+		return result.a - result.b;
+	}
 }
 
 function multiply(a, b) {
-	if (
-		isNaN(a) ||
-		isNaN(b) ||
-		a == null ||
-		b == null ||
-		typeof a === 'string' ||
-		typeof b === 'string'
-	)
-		return 'Only numbers accepted!';
-	return a * b;
+	const result = validateInput(a, b);
+	if (typeof result === 'string') {
+		return result;
+	} else {
+		return result.a * result.b;
+	}
 }
 
 function divide(a, b) {
+	const result = validateInput(a, b);
+	if (typeof result === 'string') {
+		return result;
+	} else {
+		return result.a / result.b;
+	}
+}
+
+module.exports = {add, substract, multiply, divide};
+
+function validateInput(a, b) {
 	if (
 		isNaN(a) ||
 		isNaN(b) ||
@@ -47,9 +44,9 @@ function divide(a, b) {
 		b == null ||
 		typeof a === 'string' ||
 		typeof b === 'string'
-	)
+	) {
 		return 'Only numbers accepted!';
-	return a / b;
+	} else {
+		return {a: a, b: b};
+	}
 }
-
-module.exports = {add, substract, multiply, divide};
