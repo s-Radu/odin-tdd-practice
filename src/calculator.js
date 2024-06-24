@@ -27,10 +27,29 @@ function substract(a, b) {
 }
 
 function multiply(a, b) {
-	if (isNaN(a) || isNaN(b) || typeof a === 'string' || typeof b === 'string')
+	if (
+		isNaN(a) ||
+		isNaN(b) ||
+		a == null ||
+		b == null ||
+		typeof a === 'string' ||
+		typeof b === 'string'
+	)
 		return 'Only numbers accepted!';
 	return a * b;
 }
-function divide(a, b) {}
+
+function divide(a, b) {
+	if (
+		isNaN(a) ||
+		isNaN(b) ||
+		a == null ||
+		b == null ||
+		typeof a === 'string' ||
+		typeof b === 'string'
+	)
+		return 'Only numbers accepted!';
+	return a / b;
+}
 
 module.exports = {add, substract, multiply, divide};
