@@ -21,4 +21,3 @@ function analyzeArray(arr) {
 
 module.exports = analyzeArray;
 
-analyzeArray([1, 2, 3, 4, 5]);
