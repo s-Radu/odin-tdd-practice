@@ -1,33 +1,24 @@
 function analyzeArray(arr) {
-	function avg() {
-		if (arr.length === 0) {
-			return NaN;
-		} else {
-			return arr.reduce((a, b) => a + b) / arr.length;
-		}
+	function calculateAverage() {
+		return arr.length === 0 ? NaN : arr.reduce((a, b) => a + b) / arr.length;
 	}
 
-	function min() {
-		if (arr.length === 0) {
-			return undefined;
-		} else {
-			return Math.min(...arr);
-		}
+	function findMinimum() {
+		return arr.length === 0 ? undefined : Math.min(...arr);
 	}
-	function max() {
-		if (arr.length === 0) {
-			return undefined;
-		} else {
-			return Math.max(...arr);
-		}
+
+	function findMaximum() {
+		return arr.length === 0 ? undefined : Math.max(...arr);
 	}
 
 	return {
-		average: avg(),
-		min: min(),
-		max: max(),
+		average: calculateAverage(),
+		min: findMinimum(),
+		max: findMaximum(),
 		length: arr.length,
 	};
 }
 
 module.exports = analyzeArray;
+
+analyzeArray([1, 2, 3, 4, 5]);
